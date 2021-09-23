@@ -9,7 +9,7 @@ AND={
 }
 
 df=pd.DataFrame(AND)
-df
+print(df)
 
 x,y=prepare_data(df)
 
@@ -18,3 +18,6 @@ EPOCHS=10
 model=Perceptron(eta=ETA,epochs=EPOCHS)
 model.fit(x,y)
 _=model.total_loss()
+
+save_model(model,filename="and.model")
+save_plot(df,"and.png",model)
